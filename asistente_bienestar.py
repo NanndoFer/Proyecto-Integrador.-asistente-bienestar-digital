@@ -90,6 +90,6 @@ def iniciar_asistente():
         else:
             print("Opción fuera de rango. Selecciona un número del 1 al 4.")
 
-# Punto de entrada oficial del script en Python
+# Punto de entrada
 if __name__ == "__main__":
     iniciar_asistente()
