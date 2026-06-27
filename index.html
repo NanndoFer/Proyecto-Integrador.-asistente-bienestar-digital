@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Presentación - Asistente de Bienestar Digital</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4f7f6; color: #333; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; height: 100vh; }
+        .slide { background: white; width: 800px; height: 500px; padding: 40px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); display: none; flex-direction: column; justify-content: center; position: relative; }
+        .slide.active { display: flex; }
+        h1 { color: #2c3e50; font-size: 36px; margin-bottom: 20px; border-bottom: 3px solid #3498db; padding-bottom: 10px; }
+        h2 { color: #34495e; font-size: 28px; }
+        p, li { font-size: 20px; line-height: 1.6; margin-bottom: 12px; }
+        ul { padding-left: 20px; }
+        .controls { position: absolute; bottom: 20px; right: 40px; display: flex; gap: 10px; }
+        button { background: #3498db; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px; cursor: pointer; transition: 0.3s; }
+        button:hover { background: #2980b9; }
+        .footer-info { position: absolute; bottom: 20px; left: 40px; font-size: 14px; color: #7f8c8d; }
+    </style>
+</head>
+<body>
+
+    <!-- DIAPOSITIVA 1: PORTADA -->
+    <div class="slide active">
+        <h1>Asistente de Bienestar y Desconexión Digital</h1>
+        <h2>Proyecto Integrador - Ingeniería de Software</h2>
+        <p><strong>Estudiante:</strong> Fernando Mateo Grijalva Zavala</p>
+        <p><strong>Año:</strong> 2026</p>
+        <div class="footer-info">Usa los botones para navegar</div>
+    </div>
+
+    <!-- DIAPOSITIVA 2: PROBLEMA -->
+    <div class="slide">
+        <h1>1. Planteamiento del Problema</h1>
+        <ul>
+            <li><strong>Contexto:</strong> Las interfaces digitales modernas están diseñadas para maximizar el tiempo de retención, afectando los ciclos cognitivos.</li>
+            <li><strong>Desafío:</strong> Ausencia de herramientas integradas que asistan al usuario en su autoregulación de manera consciente.</li>
+            <li><strong>Solución:</strong> Un software modular en Python enfocado en el diagnóstico del tiempo en pantalla y mitigación del estrés digital.</li>
+        </ul>
+    </div>
+
+    <!-- DIAPOSITIVA 3: ARQUITECTURA -->
+    <div class="slide">
+        <h1>2. Arquitectura de Software</h1>
+        <h2>Estructura en Capas Independientes</h2>
+        <ul>
+            <li><strong>Capa de Presentación:</strong> Entrada y salida de datos estructurados por consola de comandos.</li>
+            <li><strong>Capa de Lógica:</strong> Evaluación paramétrica del riesgo y persistencia a través de bucles condicionales (`while`).</li>
+            <li><strong>Capa de Utilidades:</strong> Manejo del tiempo síncrono (`time.sleep`) para la técnica Pomodoro.</li>
+        </ul>
+    </div>
+
+    <!-- DIAPOSITIVA 4: LOGICA -->
+    <div class="slide">
+        <h1>3. Demostración y Lógica del Código</h1>
+        <ul>
+            <li><strong>Ciclo Continuo:</strong> Controlado mediante la bandera de salida (`opcion != 4`), garantizando que la app no termine abruptamente.</li>
+            <li><strong>Rangos de Evaluación:</strong>
+                <ul>
+                    <li>Mayor a 5 horas: Estado Crítico.</li>
+                    <li>Entre 2 y 5 horas: Estado Moderado.</li>
+                    <li>Menor a 2 horas: Estado Bajo.</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <!-- DIAPOSITIVA 5: REFLEXIÓN -->
+    <div class="slide">
+        <h1>4. Impacto Social y Ético</h1>
+        <ul>
+            <li><strong>Ingeniería con Sentido:</strong> La informática moderna debe trascender la eficiencia mercantil y priorizar el bienestar psicofisiológico de las comunidades de usuarios.</li>
+            <li><strong>Conclusión:</strong> El asistente prueba que pequeñas automatizaciones de código pueden romper bucles de hiperestimulación.</li>
+        </ul>
+        <h2>¡Gracias por su atención!</h2>
+    </div>
+
+    <!-- BOTONES DE CONTROL -->
+    <div class="controls">
+        <button onclick="changeSlide(-1)">Anterior</button>
+        <button onclick="changeSlide(1)">Siguiente</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function changeSlide(direction) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide += direction;
+            if (currentSlide >= slides.length) currentSlide = 0;
+            if (currentSlide < 0) currentSlide = slides.length - 1;
+            slides[currentSlide].classList.add('active');
+        }
+    </script>
+</body>
+</html>
